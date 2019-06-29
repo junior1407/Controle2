@@ -1,5 +1,6 @@
 clear all; 
-clc
+clc;
+close all;
 w0 = 1;
 
 A = [0 1;-w0^2 1]; %Já está em variaveis de fase.

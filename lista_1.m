@@ -1,5 +1,6 @@
 clc;
 clear all;
+close all;
 b=50;
 m=1000;
 A= [0 1; 0 -b/m];
