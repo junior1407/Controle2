@@ -17,7 +17,6 @@ Tf = tf(num,den)
 
 polos= 5*[-2*w0 -2*w0]
 L = acker(Ao',Co',polos)';
-% Cria e exibe T(s).
 [numt,dent] = ss2tf(Ao-L*Co,Bo,Co,Do)
 T=tf(numt,dent)
 SS = tf2ss(numt,dent);

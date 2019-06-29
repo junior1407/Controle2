@@ -18,3 +18,4 @@ Dp=Dc;                                % Form D phase-variable form.
 'Controllability'
 ctrb(sys) %Controllability matrix
 rank(ctrb(sys)) %rank
+length(Ac)
