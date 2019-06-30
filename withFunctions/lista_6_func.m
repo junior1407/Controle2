@@ -12,7 +12,7 @@ Acc=A-B*K % Cria a matriz A compensada.
 Bcc=B; % Cria a matriz B compensada.
 Ccc=C; % Cria a matriz C compensada.
 Dcc=D; % Cria a matriz D compensada.
-ess_i = 1 + Ccc*((Acc-Bcc*K)\Bcc) 
+ess_i = 1+ Ccc*inv(Acc-Bcc*K)*Bcc 
 
 [numt,dent]=ss2tf (Acc,Bcc,Ccc,Dcc);
 Gs = tf(numt, dent)
@@ -32,4 +32,4 @@ t = 0:0.1:5;
 sys_cl = ss(Aa-Ba*Ki,Br,Ca,Da);
 step(sys_cl,t)
 
-ess_f = 1 + Ca*((Aa-Ba*Ka)\Ba) %erro de regime estacionario
+ess_f = 1 + Ca*inv(Aa-Ba*Ki)*Ba %erro de regime estacionario
