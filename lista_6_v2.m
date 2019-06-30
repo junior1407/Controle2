@@ -1,10 +1,10 @@
 clear all; clc
 
 %Antes de Adicionar Integrador
-%numg = 1;
-%deng = [1 3];
-numg= [0 0 1];
-deng = [1 5 3];
+numg = 1;
+deng = [1 3];
+%numg= [0 0 1];
+%deng = [1 5 3];
 [A,B,C,D] = tf2ss(numg,deng);
 
 %Adicionando integrador
@@ -16,8 +16,8 @@ T = tf(numg,deng) * integral
 [A_1,B_1,C_1,D_1] = tf2ss(num,den)
 
 % K_KE contem todos K e o Ke no fim
-%K_Ke = acker(A_1,B_1,[-5 -5])
-K_Ke = acker(A_1,B_1,roots([1 116 1783.1 18.31])')
+K_Ke = acker(A_1,B_1,[-5 -5])
+%K_Ke = acker(A_1,B_1,roots([1 116 1783.1 18.31])')
 
 K= K_Ke(1:end-1) %Separei só os K
 Ke= K_Ke(end) % Separei só o Ke
