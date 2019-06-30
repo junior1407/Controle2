@@ -14,3 +14,5 @@ wn=4/(z*Ts);                        % Calculate required natural
 [num_esp,den_esp]=ord2(wn,z);  
 Hs = tf(num_esp, den_esp)
 K = acker(A, B, [-5])
+
+%Cell2mat
