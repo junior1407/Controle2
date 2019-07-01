@@ -1,4 +1,4 @@
-clc
+    clc
 clear all
 num = [1];
 den = [1 3];
