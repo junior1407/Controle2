@@ -47,8 +47,8 @@ xlabel("T")
 ylabel("K")
 hold on
 
-% K > (E*F)/(2*D)
-reta = ones(1,length(T_))*0;%(E*F)/(2*D);
+% K > 0
+reta = zeros(1,length(T_));
 %reta = E./(D*T_);
 plot(T_,reta)
 

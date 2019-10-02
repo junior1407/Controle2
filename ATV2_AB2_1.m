@@ -36,7 +36,7 @@ cond3 = sqrt(a0^2) - a3;
 
 %Vai parecer um formato de V.
 sol_1 = solve(cond3==0, k);
-% K deve estar entre sol_1(1) < k sol(2)
+% K deve estar entre sol_1(1) < k <  sol_1(2)
 % Como sol_1(1) é negativo, e sabemos que k> 0
 % 0 < K < sol_1(2)
 % onde sol_1(2) = (10*E - 100*F + 2000)/D = 1.0337e+7
@@ -62,7 +62,6 @@ Y_1 = [];
 % Fazendo a intersecao de todas, resta
 
 % 0 < K < sol_2(4)  É o intervalo pedido!
-
 %sol_2(4) = 6.9164e+06 Ganho máximo
 % No exercicio 1, double(subs(K(1),t,0.1)) resultado no mesmo ganho
 % Logo, os ganhos máximos são iguais em ambos exercícios.
@@ -74,6 +73,8 @@ interval = 0:20000:sol_1(2);
 for i=interval
    Y_1 = [Y_1 double(subs(cond4,k,i))]; 
 end
+
+figure(1)
 % Fazendo a comparação 
 plot (interval, Y_1)
 title("Comparativo de Intervalos na condição 4")
@@ -87,3 +88,13 @@ SP=sol_1(2);
 line([SP SP],[min(Y_1) max(Y_1)],'Color',"green")
 SP=0; 
 line([SP SP],[min(Y_1) max(Y_1)],'Color',"yellow")
+
+figure(2)
+interval = 0:20000:sol_2(4);
+Y_2 = [];
+for i=interval
+   Y_2 = [Y_2 double(subs(cond4,k,i))]; 
+end
+
+plot(interval, Y_2)
+title("K possiveis para T=0.1")
